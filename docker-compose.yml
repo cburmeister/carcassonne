@@ -1,0 +1,26 @@
+app:
+    build: .
+    command: python carcassonne.py
+    volumes:
+        - .:/var/www/carcassonne
+    ports:
+        - "5000:5000"
+    links:
+        - db
+        - redis
+        - mailcatcher
+    environment:
+        FLASK_APP: /var/www/carcassonne/carcassonne.py
+db:
+    image: postgres:9.4.4
+    ports:
+        - "5432:5432"
+redis:
+    image: redis:2.8.17
+    ports:
+        - "6379:6379"
+mailcatcher:
+    image: yappabe/mailcatcher
+    ports:
+        - 1025:1025
+        - 1080:1080

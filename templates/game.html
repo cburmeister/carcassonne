@@ -1,0 +1,20 @@
+<!doctype html>
+<title>Game #{{ game.id }}</title>
+
+{% if is_players_turn %}
+    It's your turn!
+{% endif %}
+
+<table>
+    {% for row in game.board() %}
+        <tr>
+            {% for turn in row %}
+                {% if turn.tile %}
+                    <td><img src="{{ url_for('static', filename='tiles/%s'|format(turn.tile.path)) }}"></img></td>
+                {% else %}
+                    <td><img src="{{ url_for('static', filename='tiles/fow.png') }}"></img></td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>

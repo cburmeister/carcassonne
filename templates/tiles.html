@@ -1,0 +1,4 @@
+{% for tile in tiles %}
+    <img src="{{ url_for('static', filename='tiles/%s'|format(tile.path)) }}"></img>
+    {{ tile.id }}
+{% endfor %}

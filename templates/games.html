@@ -1,0 +1,9 @@
+<!doctype html>
+<h1>Games</h1>
+<ul>
+    {% for game in games %}
+        <li>
+            <a href="{{ url_for('game', id=game.id) }}">Game #{{ game.id }}</a>
+        </li>
+    {% endfor %}
+</ul>

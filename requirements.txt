@@ -1,0 +1,7 @@
+Flask-Mail==0.9.1
+Flask-SQLAlchemy==2.1
+Flask==0.11.1
+SQLAlchemy==1.0.14
+itsdangerous==0.24
+psycopg2==2.5.1
+redis==2.8.0
